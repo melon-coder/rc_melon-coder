@@ -1,0 +1,1 @@
+{"url":"http://supplier.example/callback","method":"POST","headers":{"Authorization":"Bearer x"},"body":"{\"event\":\"user.registered\"}","idempotencyKey":"ord-1001"}

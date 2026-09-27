@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:notify;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+
+notify:
+  scheduling:
+    enabled: false
+  default-max-attempts: 15
+  default-deadline-seconds: 604800
+  http-connect-timeout-ms: 1000
+  http-read-timeout-ms: 1000
+  allowed-hosts: []
+  dispatcher:
+    poll-interval-ms: 100
+    reaper-interval-ms: 500
+    batch-size: 100
+    lease-seconds: 5
+    max-concurrency: 10
+  circuit:
+    failure-threshold: 3
+    cooldown-seconds: 5
+    per-supplier-max-concurrency: 5

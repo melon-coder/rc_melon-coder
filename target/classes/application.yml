@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/notify;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+server:
+  port: 8080
+
+notify:
+  default-max-attempts: 15
+  default-deadline-seconds: 604800
+  http-connect-timeout-ms: 3000
+  http-read-timeout-ms: 5000
+  max-body-size-bytes: 1048576
+  allowed-hosts: []
+  dispatcher:
+    poll-interval-ms: 1000
+    reaper-interval-ms: 60000
+    batch-size: 100
+    lease-seconds: 600
+    max-concurrency: 50
+  circuit:
+    failure-threshold: 5
+    cooldown-seconds: 60
+    per-supplier-max-concurrency: 10
